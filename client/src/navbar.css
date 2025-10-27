@@ -1,0 +1,108 @@
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  width: 130%;
+  height: 65px;
+  background: #4e73df;
+  color: white;
+  display: flex;
+  justify-content: space-between; /* 왼쪽 로고, 중앙 메뉴 */
+  align-items: center;
+  padding: 0 40px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  font-family: "Noto Sans KR", sans-serif;
+  box-sizing: border-box;
+}
+
+/* 🔹 왼쪽 로고 */
+.nav-left .nav-logo {
+  font-weight: 700;
+  font-size: 20px;
+  color: white;
+  text-decoration: none;
+  letter-spacing: 0.5px;
+}
+
+/* 🔹 가운데 메뉴 리스트 */
+.nav-center {
+  flex: 1;
+  display: flex;
+  justify-content: center; /* ✅ 메뉴들을 가운데 정렬 */
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 80px; /* 메뉴 간 간격 */
+  margin: 0;
+  padding: 0;
+}
+
+/* 🔹 메뉴 링크 */
+.nav-link {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+  transition: background 0.2s ease, transform 0.2s ease;
+  padding: 8px 12px;
+  border-radius: 6px;
+}
+
+.nav-link:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: translateY(-1px);
+}
+
+/* 🔹 로그아웃 버튼 */
+.logout-btn {
+  background: white;
+  color: #4e73df;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 14px;
+  font-weight: 600;
+  font-size: 15px;
+  cursor: pointer;
+  transition: all 0.2s;
+  position: relative;
+  margin-top: -5px; /* ✅ 버튼을 위로 2px 이동 */
+}
+
+.logout-btn:hover {
+  background: #e3e7ff;
+  color: #2c49c5;
+}
+
+/* 🔹 반응형 (모바일 대응) */
+@media (max-width: 700px) {
+  .navbar {
+    flex-direction: column;
+    height: auto;
+    padding: 10px 20px;
+  }
+
+  .nav-center {
+    justify-content: center;
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .nav-list {
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .nav-link {
+    font-size: 15px;
+  }
+
+  .logout-btn {
+    font-size: 14px;
+    padding: 7px 10px;
+  }
+}
+/*📘 네비게이션 바의 색상, 간격, 반응형 정렬 담당*/
