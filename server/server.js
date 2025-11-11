@@ -6,6 +6,10 @@ import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
 import path from 'path';
 
+//수정사항
+import cors from "cors";
+app.use(cors());
+
 // 라우터
 import uploadRouter from './routes/upload.js';
 import imagesRouter from './routes/images.js';
@@ -151,3 +155,4 @@ app.listen(PORT, () => {
 
 // (선택) 외부에서 인증 미들웨어 사용 가능하도록 export
 export { auth };
+
