@@ -1,0 +1,179 @@
+:root {
+  --primary: #4e73df;
+  --primary-hover: #2e59d9;
+  --bg: #f5f7ff;
+  --text: #222;
+  --muted: #667085;
+  --shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  --radius: 12px;
+}
+
+/* 전체 레이아웃 */
+.home-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background: var(--bg);
+  padding: 40px 20px;
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, "Noto Sans KR", sans-serif;
+}
+
+/* 제목 */
+.home-container h2 {
+  color: var(--text);
+  font-weight: 700;
+  font-size: 1.6rem;
+  margin-bottom: 6px;
+}
+
+.home-container p {
+  color: var(--muted);
+  font-size: 15px;
+  margin-bottom: 20px;
+}
+
+/* 파일 업로드 */
+input[type="file"] {
+  border: 1px solid #ccc;
+  border-radius: var(--radius);
+  padding: 10px 14px;
+  background: white;
+  cursor: pointer;
+  box-shadow: var(--shadow);
+  transition: 0.2s;
+  font-size: 14px;
+}
+
+input[type="file"]:hover {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 4px rgba(78, 115, 223, 0.1);
+}
+
+/* 미리보기 및 결과 */
+.preview,
+.result {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.preview img,
+.result img {
+  width: min(90%, 480px);
+  height: auto;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  background: white;
+  display: block;
+}
+
+/* 로딩 텍스트 */
+.loading-text {
+  color: var(--primary);
+  font-weight: 600;
+  margin-top: 8px;
+  font-size: 15px;
+}
+
+/* 버튼 영역 */
+.buttons {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+
+  /* 🔥 버튼 간격 넓힘 */
+  gap: 40px;
+}
+/* 버튼 스타일 */
+button {
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: var(--radius);
+  padding: 12px 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+  box-shadow: var(--shadow);
+}
+
+button:hover {
+  background: var(--primary-hover);
+  transform: translateY(-1px);
+}
+
+button:disabled {
+  background: #9cb2f3;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* 모바일 대응 */
+@media (max-width: 600px) {
+  .home-container {
+    padding: 28px 14px;
+  }
+
+  .home-container h2 {
+    font-size: 1.3rem;
+  }
+
+  .home-container p {
+    font-size: 14px;
+  }
+
+  .buttons {
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+  }
+
+  button {
+    width: 150%;
+  }
+
+  .preview img,
+  .result img {
+    width: 95%;
+  }
+}
+/*📘 홈페이지의 이미지 업로드, 미리보기 버튼, 반응형 디자인 담당*/
+
+/* 안내 문구 */
+.upload-info {
+  margin-top: 10px;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+/* 버튼 공통 스타일은 그대로 두고, 워터마크 버튼만 강조 */
+.watermark-btn {
+  background: linear-gradient(135deg, #4e73df, #6c5ce7);
+  color: #fff;
+  border: none;
+  border-radius: 999px;
+  padding: 12px 22px;
+  font-weight: 700;
+  font-size: 15px;
+  cursor: pointer;
+  box-shadow: 0 8px 18px rgba(78, 115, 223, 0.45);
+  transition: transform 0.12s ease, box-shadow 0.12s ease, opacity 0.1s;
+}
+
+.watermark-btn:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 22px rgba(78, 115, 223, 0.6);
+  opacity: 0.96;
+}
+
+.watermark-btn:disabled {
+  background: #9cb2f3;
+  box-shadow: none;
+  cursor: not-allowed;
+}

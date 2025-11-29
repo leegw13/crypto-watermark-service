@@ -1,0 +1,158 @@
+/* navbar.css */
+
+/* 상단 네비게이션 바 전체 */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  width: 100%;
+  height: 72px;
+  background: linear-gradient(90deg, #4e73df, #6c5ce7);
+  color: white;
+
+  display: flex;
+  align-items: center;          /* 세로 가운데 정렬 */
+  justify-content: space-between;
+
+  padding: 0 50px;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.12);
+  box-sizing: border-box;
+  font-family: "Noto Sans KR", system-ui;
+}
+
+/* 왼쪽 로고 (Navbar.jsx 에서 className="logo") */
+.logo {
+  font-weight: 800;
+  font-size: 20px;
+  color: white;
+  text-decoration: none;
+  letter-spacing: 0.6px;
+}
+
+/* 가운데 메뉴 컨테이너 (Navbar.jsx 에서 className="nav-links") */
+.nav-links {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 60px;                 /* Home / MyPage / Verify 사이 간격 */
+}
+
+/* 메뉴 링크 (Link 컴포넌트) */
+.nav-links a {
+  position: relative;
+  color: #f1f5ff;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 600;
+  padding: 6px 10px;
+  border-radius: 999px;
+  transition: color 0.2s ease, background 0.2s ease, transform 0.15s ease;
+  opacity: 0.9;
+}
+
+.nav-links a:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-1px);
+  opacity: 1;
+}
+
+/* 활성 메뉴 (Navbar.jsx 에서 className={isActive() ? "active" : ""}) */
+.nav-links a.active {
+  background: white;
+  color: #4e73df;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.18);
+  opacity: 1;
+}
+
+/* 오른쪽 유저 정보 + 로그아웃 (className="nav-right") */
+.nav-right {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  min-width: 200px;
+  padding-left: 20px;
+}
+
+.nav-user {
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+/* 로그아웃 버튼 (className="logout-btn") */
+.logout-btn {
+  background: white;
+  color: #4e73df;
+  border: none;
+  border-radius: 999px;
+  padding: 8px 14px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.16);
+}
+
+.logout-btn:hover {
+  background: #e3e9ff;
+  color: #2c3bc5;
+  transform: translateY(-1px);
+}
+
+/* 모바일 대응 */
+@media (max-width: 700px) {
+  .navbar {
+    padding: 8px 16px;
+    height: auto;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .nav-links {
+    order: 3;
+    width: 100%;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  .nav-right {
+    order: 2;
+    margin-left: auto;
+  }
+}
+
+/* ===== 마이페이지 이미지 리스트 스타일 (그대로 유지) ===== */
+
+.image-list {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.image-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.image-col {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.img-label {
+  font-size: 13px;
+  color: #667085;
+}
+
+.mypage-img {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.15);
+  object-fit: cover;
+}

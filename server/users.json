@@ -1,0 +1,13 @@
+[
+  {
+    "id": 1760264244137,
+    "email": "test@naver.com",
+    "password": "$2b$10$Gmek/GaMdysuFsVT1gjez.JWJiQuwNi9e7u44M54YOJLh7TDQ5N4."
+  },
+  {
+    "id": 1760363468223,
+    "email": "user257920536@naver.com",
+    "password": "$2b$10$GQKBLubbOLFw./orzX0gRe4QP3kHqneNHDovaMeSq/yPqo16tnJA.",
+    "createdAt": "2025-10-13T13:51:08.223Z"
+  }
+]

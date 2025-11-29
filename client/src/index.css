@@ -1,0 +1,74 @@
+/* 📘 전역 기본 스타일 */
+
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  /* 다크모드 대신 기본 라이트 테마로 고정할게 */
+  color-scheme: light;
+  color: #213547;
+  background-color: #f4f6ff;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* 링크 기본 스타일 */
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+
+a:hover {
+  color: #535bf2;
+}
+
+/* ★ body를 가운데 정렬 flex가 아니라 "전체 화면" 기준으로 변경 */
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: #f4f6ff; /* 전체 배경색 */
+}
+
+/* ★ 앱 루트(#root)가 화면 전체를 차지하도록 설정 */
+#root {
+  width: 100vw;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+/* 헤딩, 버튼 기본값은 거의 안 써서 심플하게만 정리 */
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #f9f9f9;
+  cursor: pointer;
+  transition: border-color 0.25s, background-color 0.25s;
+}
+
+button:hover {
+  border-color: #646cff;
+  background-color: #eef0ff;
+}
+
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+/* prefers-color-scheme 다크모드 대응은 일단 제거 (원하면 나중에 다시 추가 가능) */
