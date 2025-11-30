@@ -1,0 +1,10 @@
+{
+  "name": "crypto-watermark-service",
+  "version": "1.0.0",
+  "scripts": {
+    "start-server": "npm start --prefix server",
+    "start-client": "npm run dev --prefix client",
+    "start-python": "python python/app.py",
+    "start-all": "concurrently \"npm run start-server\" \"npm run start-client\" \"npm run start-python\""
+  }
+}
