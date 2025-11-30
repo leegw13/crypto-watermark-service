@@ -36,6 +36,7 @@ def apply_watermark_route():
     out_path = data.get("outPath")
     payload = data.get("payload")
     key = int(data.get("key", 1234))
+    print(out_path, key)
     callback_url = data.get("callbackUrl") or f"{NODE_BASE_URL}/watermark/callback"
 
     if not (image_id and src_path and out_path and payload):
