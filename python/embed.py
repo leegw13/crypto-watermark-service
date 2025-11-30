@@ -42,6 +42,6 @@ def embed_watermark(image_path: str, watermark_data: str, output_path: str, key:
         cb.astype(np.float32)
     ])
     watermarked_img = cv2.cvtColor(merged.astype(np.uint8), cv2.COLOR_YCrCb2BGR)
-    cv2.imwrite(output_path, watermarked_img)
+    # cv2.imwrite(output_path, watermarked_img)
 
     print(f"워터마크 삽입 완료: {output_path} (비트 수: {wm_length})")
